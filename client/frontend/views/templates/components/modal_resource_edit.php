@@ -1,0 +1,114 @@
+<div class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" id="modal-edit-resource">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" name="modal-edit-closer" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Edit Sales Representative</h4>
+			</div>
+			<!--form starts here-->
+			<form role="form" id='frm_update_resource' name='frm_edit_resource' method="POST" action="<?php echo current_url();?>/update">
+				<div class="modal-body">
+            		<div class="panel panel-default">
+                		<div class="panel-body">
+                    		<div class="row">
+		                        <div class="col-lg-12">
+		                            <div class="form-group">
+		                                <label for="">Sales Representative Name</label>
+		                                 <input type="hidden" id="edit_resource_id" name="edit_resource_id" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4">
+		                            <div class="form-group">
+		                                <input type="text" id="edit_resource_fname" name="edit_resource_fname" class="form-control" placeholder="First Name" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4">
+		                            <div class="form-group">
+		                                <input type="text" id="edit_resource_mname" name="edit_resource_mname" class="form-control" placeholder="Middle Name" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4">
+		                            <div class="form-group">
+		                                <input type="text" id="edit_resource_lname" name="edit_resource_lname" class="form-control" placeholder="Last Name" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-6">
+		                            <div class="form-group">
+		                                <label for="">Gender</label>
+		                                <select id="edit_resource_gender" name="edit_resource_gender" class="form-control">
+		                                  <option value='0'>Select</option>
+		                                  <option value='M'>Male</option>
+		                                  <option value='F'>Female</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-6">
+		                            <div class="form-group">
+		                                <label for="">Birth Date</label>
+		                                <input  id="edit_resource_bday" name="edit_resource_bday" type="text" class="form-control datepicker" placeholder="Choose Date" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-12">
+		                            <div class="form-group">
+		                                <label for="">Contact Informations</label>
+		                            </div>
+		                        </div>
+		                           <div class="col-lg-4">
+		                            <div class="form-group">
+		                                <input type="text" id="edit_resource_email" name="edit_resource_email" class="form-control" placeholder="Email" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4">
+		                            <div class="form-group">
+		                                <input type="text" id="edit_resource_telno" name="edit_resource_telno" class="form-control" placeholder="Landline" data-mask="999-999-9999" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4">
+		                            <div class="form-group">
+		                                <input type="text" id="edit_resource_celno" name="edit_resource_celno" class="form-control" placeholder="Mobile" data-mask="9999-999-9999" />
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-10">
+		                            <div class="form-group">
+		                                <label for="">Address</label>
+
+		                                <input type="hidden" id="edit_resource_assigned_province_id" name="edit_resource_assigned_province_id"/>
+		                                <div class="form-group input-group">
+		                                    <span class="input-group-addon" data-target="#modal-province-lookup" data-toggle="modal" id="resource_edit_province_btn" >
+		                                    	<i class="fa fa-search"></i></span>
+		                                    <input disabled type="text" id="edit_resource_assigned_province" name="edit_resource_assigned_province" class="form-control" placeholder="Search province" placeholder="Search Province">
+		                                </div>                                
+
+		                                <!-- <input type="hidden" id="resource_edit_loc_id" name="resource_edit_loc_id" value='1'/>
+		                                <div class="form-group input-group">
+		                                    <span class="input-group-addon" data-target="#modal-location-lookup" data-toggle="modal" id="resource_edit_loc_btn" name="resource_edit_loc_btn"><i class="fa fa-search"></i></span>
+		                                    <input disabled type="text" id="resource_edit_loc" name="resource_edit_loc" class="form-control" placeholder="Search location" placeholder="Search Location">
+		                                </div>                                 -->
+		                                
+		                            </div>
+		                        </div>
+		                         <div class="col-lg-9">
+		                            <div class="form-group">
+		                                <input  id="edit_resource_address" name="edit_resource_address" type="text" class="form-control" placeholder="Bldg./Apartment/Street No." />
+		                            </div>
+		                        </div>
+                    		</div>
+                    	</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+          			<button type="button" class="btn btn-default popover-close" name="modal-edit-closer" data-dismiss="modal">Cancel</button>
+          			<button id="resource_update" name="resource_update" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Update</button>
+        		</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    (function($){
+        $('[name="modal-edit-closer"]').on('click', function(e){
+            e.preventDefault();
+            $('#modal-edit-new-customer').modal('hide');
+        })
+    })(jQuery);
+</script>
